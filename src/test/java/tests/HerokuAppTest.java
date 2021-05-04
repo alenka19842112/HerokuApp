@@ -22,11 +22,12 @@ public class HerokuAppTest {
         driver.manage().window().maximize();//размер окна
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS); //ожидание загрузки элемента для findelement следующие за ним
         driver.get("http://the-internet.herokuapp.com/inputs");//зайти на страницу
+
         WebElement inputField = driver.findElement(By.xpath("//*[@type='number']"));
         inputField.sendKeys("20");
         String actualText = inputField.getAttribute("value");
-        //driver.findElement(By.xpath("//*[@type='number']")).sendKeys("20"); //заменили на стр 23-24
-       // String actualText = driver.findElement(By.xpath("//*[@type='number']")).getAttribute("value");// заменили стр 25
+        //driver.findElement(By.xpath("//*[@type='number']")).sendKeys("20"); //заменили на стр 26-27
+       // String actualText = driver.findElement(By.xpath("//*[@type='number']")).getAttribute("value");// заменили стр 28
 
         Assert.assertEquals(actualText,"20"); //проверка актуального и ожидаемого значения
 
@@ -35,25 +36,9 @@ public class HerokuAppTest {
 
         Assert.assertEquals(actualText,"21");*/
 
-
-
-
         driver.quit();
     }
 
 
-    @Test
-    public void herokuAppDropDownTest(){
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-        driver.get("http://the-internet.herokuapp.com/dropdown");
-        Select select = new Select(driver.findElement(By.id("dropdown")));
-        select.selectByVisibleText("Option 1");
 
-        String actualText = select.getFirstSelectedOption().getText();
-
-        Assert.assertEquals(actualText, "Option 1");
-
-        //driver.quit();
-    }
 }
