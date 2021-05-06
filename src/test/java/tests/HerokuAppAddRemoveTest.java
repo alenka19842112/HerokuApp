@@ -19,9 +19,9 @@ public class HerokuAppAddRemoveTest {
         driver.findElement(By.xpath("//*[@onclick='addElement()']")).click();
         driver.findElement(By.xpath("//*[@onclick='addElement()']")).click();
         driver.findElement(By.xpath("//*[@onclick='deleteElement()']")).click();
-        int actualCount = driver.findElements(By.xpath("//*[@onclick='deleteElement()']")).size();
+        int deleteButtonsCount = driver.findElements(By.xpath("//*[@onclick='deleteElement()']")).size();
 
-        Assert.assertEquals(actualCount,1);
+        Assert.assertEquals(deleteButtonsCount,1);
 
         driver.quit();
 

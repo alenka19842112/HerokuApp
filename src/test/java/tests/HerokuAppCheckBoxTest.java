@@ -18,16 +18,11 @@ public class HerokuAppCheckBoxTest {
         driver.get("http://the-internet.herokuapp.com/checkboxes");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
-        List<WebElement> CheckBoxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
-        boolean isActualResult;
-        if (!CheckBoxes.get(0).isSelected()) {
-            CheckBoxes.get(0).click();
-            isActualResult = true;
-        } else {
-            isActualResult = false;
-        }
+        List<WebElement> checkBoxesList = driver.findElements(By.cssSelector("input[type='checkbox']"));
+        checkBoxesList.get(0).click();
+        boolean isFirstCheckboxSelected = checkBoxesList.get(0).isSelected();
 
-        Assert.assertTrue(isActualResult);
+        Assert.assertTrue(isFirstCheckboxSelected);
 
         driver.quit();
 
@@ -39,17 +34,11 @@ public class HerokuAppCheckBoxTest {
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/checkboxes");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        List<WebElement> CheckBoxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
-        boolean isActualResult;
-        if (CheckBoxes.get(1).isSelected()) {
-            CheckBoxes.get(1).click();
-            isActualResult = true;
-        } else {
-            isActualResult = false;
-        }
+        List<WebElement> checkBoxesList = driver.findElements(By.cssSelector("input[type='checkbox']"));
+        checkBoxesList.get(1).click();
+        boolean isSecondCheckboxSelected = checkBoxesList.get(1).isSelected();
 
-        Assert.assertTrue(isActualResult);
-
+        Assert.assertFalse(isSecondCheckboxSelected);
 
         driver.quit();
 
