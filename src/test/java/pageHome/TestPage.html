@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Прокат детских товаров </title>
+</head>
+<style>
+    div {
+        padding: 10px;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+<body>
+<div style="background-color:Beige">
+    <h1 style="color:black">Прокат детских товаров</h1>
+    <img data-qa src="p1.jfif" alt="stroller" width="250" height="300">
+
+    <p><a data-qa href="#section2">Оплата и доставка</a></p>
+
+    <h1>Каталог</h1>
+    <form>
+        <label for="product">Выберите товар из списка:</label>
+        <select name="product" id="product">
+            <option value="product_list">Список товаров</option>
+            <option value="strollers">Коляски</option>
+            <option value="swing">Качели</option>
+            <option value="trampolines">Батуты</option>
+            <option value="bicycles">Велосипеды</option>
+        </select>
+
+        <br><br>
+        <p><strong>Заполните ваши данные:</strong></p>
+        <label for="fname">Имя:</label><br>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Фамилия:</label><br>
+        <input type="text" id="lname" name="lname">
+        <br><br>
+        <label for="email">Введите Ваш Email:</label><br>
+        <input type="email" id="email" name="email">
+        <br>
+        <h2>Способ оплаты</h2>
+
+        <p><strong>Выберите способ оплаты:</strong></p>
+
+        <input type="radio" id="card" name="payment" value="Карта">
+        <label for="card">Карта</label><br>
+        <input type="radio" id="cash" name="payment" value="Наличные">
+        <label for="cash">Наличные</label><br>
+        <input type="radio" id="erip" name="payment" value="ЕРИП">
+        <label for="erip">ЕРИП</label><br><br>
+
+        <input type="checkbox" id="pickup" name="horns">
+        <label for="pickup">Самовывоз</label><br><br>
+
+        <button data-qa="submit_button_payment" onclick="alert('Оплачено')">Оплатить</button>
+    </form>
+
+    <p><h2 id="section2">Оплата и доставка</h2></p>
+    <table style="width:50%">
+        <tr>
+            <th>Стоимость услуг</th>
+            <th>Стоимость доставки</th>
+        </tr>
+        <tr>
+            <td>До 50 бел. руб.</td>
+            <td>5 бел. руб. Доставка курьером</td>
+        </tr>
+        <tr>
+            <td>От 50 бел. руб.</td>
+            <td>Бесплатно курьером</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
