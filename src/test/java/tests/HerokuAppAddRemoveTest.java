@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class HerokuAppAddRemoveTest {
     @Test
-    public void herokuAppAddRemoveTest(){
+    public void herokuAppAddRemoveTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
@@ -21,7 +21,7 @@ public class HerokuAppAddRemoveTest {
         driver.findElement(By.xpath("//*[@onclick='deleteElement()']")).click();
         int deleteButtonsCount = driver.findElements(By.xpath("//*[@onclick='deleteElement()']")).size();
 
-        Assert.assertEquals(deleteButtonsCount,1);
+        Assert.assertEquals(deleteButtonsCount, 1);
 
         driver.quit();
 
