@@ -15,23 +15,16 @@ import java.util.concurrent.TimeUnit;
 public class HerokuAppTest {
 
     @Test
-    public void herokuAppInputTest(){
-
+    public void herokuAppInputTest() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.get("http://the-internet.herokuapp.com/inputs");
-
         WebElement inputField = driver.findElement(By.xpath("//*[@type='number']"));
         inputField.sendKeys("20");
         String actualText = inputField.getAttribute("value");
-
-        Assert.assertEquals(actualText,"20");
-
+        Assert.assertEquals(actualText, "20");
         driver.quit();
     }
-
-
-
 }
